@@ -45,10 +45,16 @@ const App = () => {
         <div>
           <h3>{isCorrect ? 'Correct!' : 'Incorrect!'}</h3>
           {currentItem.image1 && (
-            <p><a href={currentImage.link1}><img src={currentItem.image1} alt={`Picture of ${currentItem.name}`} /></a></p>
+            <p>
+              <a href={currentItem.link1}><img
+                src={`/images/${currentItem.image1}`} alt={`Picture of ${currentItem.name}`} style={{maxWidth: '300px'}} /></a>
+            </p>
           )}
           {currentItem.image2 && (
-            <p><a href={currentImage.link2}><img src={currentItem.image2} alt={`Second picture of ${currentItem.name}`} /></a></p>
+            <p>
+              <a href={currentItem.link2}><img
+                src={`/images/${currentItem.image2}`} alt={`Second picture of ${currentItem.name}`} style={{maxWidth: '300px'}} /></a>
+            </p>
           )}
           <button onClick={handleNextItem}>Next Item</button>
         </div>
