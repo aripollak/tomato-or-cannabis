@@ -10,7 +10,6 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-spring": "^9.7.2",
     "wouter": "^2.11.0",
     "react-helmet-async": "^1.3.0",
     "@vitejs/plugin-react": "^4.0.3"
@@ -23,10 +22,10 @@
     "not dead"
   ],
   "engines": {
-    "node": "14.x"
+    "node": "16.x"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/glitch-hello-react"
+    "url": "https://glitch.com/edit/#!/tomato-or-cannabis"
   },
   "glitch": {
     "projectType": "generated_static"

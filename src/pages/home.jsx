@@ -31,12 +31,11 @@ const App = () => {
   
   return (
     <div>
-      <h1>Guess the Item</h1>
-      <p>Is it a Tomato, a Cannabis Strain, or Both?</p>
+      <h1>{currentItem.name}</h1>
 
       {isCorrect === null && (
         <div>
-          <p>{currentItem.name}</p>
+         <h2>Is it a Tomato, a Cannabis Strain, or Both?</h2>
           <div>
             <button onClick={() => handleGuess('tomato')}>Tomato</button>
             <button onClick={() => handleGuess('cannabis')}>Cannabis</button>
@@ -47,9 +46,8 @@ const App = () => {
 
       {isCorrect !== null && (
         <div>
-          <p>{isCorrect ? 'Correct!' : 'Incorrect!'}</p>
-          <p>{currentItem.name}</p>
-          <p><img src={currentItem.image} alt={`Picture of ${currentItem.name}`} style={{ maxWidth: '300px' }} /></p>
+          <h2>{isCorrect ? 'Correct!' : 'Incorrect!'}</h2>
+          <p><img src={currentItem.image} alt={`Picture of ${currentItem.name}`} /></p>
           <button onClick={handleNextItem}>Next Item</button>
         </div>
       )}
