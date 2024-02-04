@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Papa from 'papaparse';
 import itemsCSV from '../items.csv?raw';
 
-const items = Papa.parse(itemsCSV, {header: true});
+const items = Papa.parse(itemsCSV, {header: true, skipEmptyLines: 'greedy'});
 
 function getRandomItem() {
   const randomIndex = Math.floor(Math.random() * items.data.length);
