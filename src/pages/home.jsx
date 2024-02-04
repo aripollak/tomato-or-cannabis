@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
-
-const items = [
-  { name: 'Cherry Tomato', type: 'tomato', image: 'https://example.com/cherry-tomato.jpg' },
-  { name: 'OG Kush', type: 'cannabis', image: 'https://example.com/og-kush.jpg' },
-  { name: 'Tomatillo', type: 'both', image: 'https://example.com/tomatillo.jpg' },
-  // Add more items as needed
-];
+import Papa from 'papaparse';
+import itemsCSV from '../items.csv?raw';
 
 function getRandomItem(items) {
   const randomIndex = Math.floor(Math.random() * items.length);
   return items[randomIndex];
 }
+
+const items = Papa.parse(itemsCSV, {headers: true});
+console.log(items);
 
 const App = () => {
   const [currentItem, setCurrentItem] = useState(getRandomItem(items));
