@@ -28,11 +28,11 @@ const App = () => {
   
   return (
     <div>
-      <h1>{currentItem.name}</h1>
+      <h2>{currentItem.name}</h2>
 
       {isCorrect === null && (
         <div>
-         <h2>Is it a Tomato, a Cannabis Strain, or Both?</h2>
+         <h3>Is it a Tomato, a Cannabis Strain, or Both?</h3>
           <div>
             <button onClick={() => handleGuess('tomato')}>Tomato</button>
             <button onClick={() => handleGuess('cannabis')}>Cannabis</button>
@@ -43,8 +43,13 @@ const App = () => {
 
       {isCorrect !== null && (
         <div>
-          <h2>{isCorrect ? 'Correct!' : 'Incorrect!'}</h2>
-          <p><img src={currentItem.image} alt={`Picture of ${currentItem.name}`} /></p>
+          <h3>{isCorrect ? 'Correct!' : 'Incorrect!'}</h3>
+          {currentItem.image1 && (
+            <p><a href={currentImage.link1}><img src={currentItem.image1} alt={`Picture of ${currentItem.name}`} /></a></p>
+          )}
+          {currentItem.image2 && (
+            <p><a href={currentImage.link2}><img src={currentItem.image2} alt={`Second picture of ${currentItem.name}`} /></a></p>
+          )}
           <button onClick={handleNextItem}>Next Item</button>
         </div>
       )}

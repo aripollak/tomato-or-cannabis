@@ -38,14 +38,6 @@ export default function Home() {
           <span className="divider">|</span>
           <Link href="/about">About</Link>
         </div>*/}
-        <a
-          className="btn--remix"
-          target="_top"
-          href="https://glitch.com/edit/#!/remix/tomato-or-cannabis"
-        >
-          <img src="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FLogo_Color.svg?v=1618199565140" alt="" />
-          Remix on Glitch
-        </a>
       </footer>
     </Router>
   );
