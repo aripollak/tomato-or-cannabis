@@ -1,7 +1,7 @@
 {
-  "name": "glitch-hello-react",
-  "version": "0.0.5",
-  "description": "A simple React single page app, built with Vite and React.",
+  "name": "Tomato or Cannabis?",
+  "version": "0.0.1",
+  "description": "A simple single page app, built with Vite and React.",
   "scripts": {
     "start": "vite",
     "build": "vite build",
@@ -24,11 +24,5 @@
   ],
   "engines": {
     "node": "16.x"
-  },
-  "repository": {
-    "url": "https://glitch.com/edit/#!/tomato-or-cannabis"
-  },
-  "glitch": {
-    "projectType": "generated_static"
   }
 }
