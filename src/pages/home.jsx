@@ -7,9 +7,13 @@ const items = [
   // Add more items as needed
 ];
 
+function getRandomItem(items) {
+  const randomIndex = Math.floor(Math.random() * items.length);
+  return items[randomIndex];
+}
+
 const App = () => {
-  const [currentItem, setCurrentItem] = useState(items[0]);
-  const [userGuess, setUserGuess] = useState(null); // Updated to null
+  const [currentItem, setCurrentItem] = useState(getRandomItem(items));
   const [isCorrect, setIsCorrect] = useState(null);
 
   const handleGuess = (guess) => {
@@ -21,12 +25,10 @@ const App = () => {
   };
 
   const handleNextItem = () => {
-    const randomIndex = Math.floor(Math.random() * items.length);
-    setCurrentItem(items[randomIndex]);
-    setUserGuess(null); // Reset to null for the next item
+    setCurrentItem(getRandomItem(items));
     setIsCorrect(null);
   };
-
+  
   return (
     <div>
       <h1>Guess the Item</h1>

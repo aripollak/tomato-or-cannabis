@@ -33,15 +33,15 @@ export default function Home() {
       </main>
       {/* Footer links to Home and About, Link elements matched in router.jsx */}
       <footer className="footer">
-        <div className="links">
+        {/*<div className="links">
           <Link href="/">Home</Link>
           <span className="divider">|</span>
           <Link href="/about">About</Link>
-        </div>
+        </div>*/}
         <a
           className="btn--remix"
           target="_top"
-          href="https://glitch.com/edit/#!/remix/glitch-hello-react"
+          href="https://glitch.com/edit/#!/remix/tomato-or-cannabis"
         >
           <img src="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FLogo_Color.svg?v=1618199565140" alt="" />
           Remix on Glitch
