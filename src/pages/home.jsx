@@ -2,20 +2,18 @@ import React, { useState } from "react";
 import Papa from "papaparse";
 import itemsCSV from "../items.csv?raw";
 
-const itemsInOrder = Papa.parse(itemsCSV, {
+const itemsInOriginalOrder = Papa.parse(itemsCSV, {
   comments: "#",
   header: true,
   skipEmptyLines: "greedy",
 });
+const items = itemsInOriginalOrder.data.sort(() => Math.random() - 0.5);
 
-function getRandomItem() {
-  const randomIndex = Math.floor(Math.random() * items.data.length);
-  return items.data[randomIndex];
-}
-
-const App = () => {
-  const [currentItem, setCurrentItem] = useState(getRandomItem());
+const Home = () => {
+  const [currentItemIndex, setCurrentItemIndex] = useState(0);
   const [isCorrect, setIsCorrect] = useState(null);
+
+  const currentItem = items[currentItemIndex];
 
   const handleGuess = (guess) => {
     if (guess === currentItem.type) {
@@ -26,7 +24,7 @@ const App = () => {
   };
 
   const handleNextItem = () => {
-    setCurrentItem(getRandomItem());
+    setCurrentItemIndex((index) => (index + 1) % items.length);
     setIsCorrect(null);
   };
 
@@ -77,4 +75,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;
