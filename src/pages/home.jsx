@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Papa from "papaparse";
+import Title from "../components/title"
 import itemsCSV from "../items.csv?raw";
 
 const itemsInOriginalOrder = Papa.parse(itemsCSV, {
@@ -9,7 +10,7 @@ const itemsInOriginalOrder = Papa.parse(itemsCSV, {
 });
 const items = itemsInOriginalOrder.data.sort(() => Math.random() - 0.5);
 
-const Home = () => {
+export default function Home() {
   const [currentItemIndex, setCurrentItemIndex] = useState(0);
   const [isCorrect, setIsCorrect] = useState(null);
 
@@ -30,6 +31,8 @@ const Home = () => {
 
   return (
     <div>
+      <Title subtitle={currentItem.name} />
+
       <div className="interactions">
         <h2>{currentItem.name}</h2>
 
@@ -78,5 +81,3 @@ const Home = () => {
     </div>
   );
 };
-
-export default Home;
