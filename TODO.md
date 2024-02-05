@@ -1,5 +1,5 @@
 # TODO 🚧
 
-- remove router
+- split into routable pages or remove router
 - script to check images in CSV all exist
 
