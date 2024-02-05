@@ -30,45 +30,49 @@ const Home = () => {
 
   return (
     <div>
-      <h2>{currentItem.name}</h2>
+      <div className="interactions">
+        <h2>{currentItem.name}</h2>
 
-      {isCorrect === null && (
-        <div>
-          <h3>Is it a Tomato, a Cannabis Strain, or Both?</h3>
+        {isCorrect === null && (
           <div>
-            <button onClick={() => handleGuess("tomato")}>Tomato</button>
-            <button onClick={() => handleGuess("cannabis")}>Cannabis</button>
-            <button onClick={() => handleGuess("both")}>Both</button>
+            <h3>Is it a Tomato Variety, a Cannabis Strain, or Both?</h3>
+            <div>
+              <button onClick={() => handleGuess("tomato")}>Tomato</button>
+              <button onClick={() => handleGuess("cannabis")}>Cannabis</button>
+              <button onClick={() => handleGuess("both")}>Both</button>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+        {isCorrect !== null && (
+          <div>
+            <h3>
+              {isCorrect ? "Correct!" : "Incorrect!"} It is {currentItem.type}
+            </h3>
+            <button onClick={handleNextItem}>Next Item</button>
+          </div>
+        )}
+      </div>
 
       {isCorrect !== null && (
-        <div>
-          <h3>{isCorrect ? "Correct!" : "Incorrect!"}</h3>
+        <div className="illustrations">
           {currentItem.image1 && (
-            <p>
-              <a href={currentItem.link1}>
-                <img
-                  src={`/images/${currentItem.image1}`}
-                  alt={`Picture of ${currentItem.name}`}
-                  style={{ maxWidth: "300px" }}
-                />
-              </a>
-            </p>
+            <a href={currentItem.link1}>
+              <img
+                className="illustration"
+                src={`/images/${currentItem.image1}`}
+                alt={`Picture of ${currentItem.name}`}
+              />
+            </a>
           )}
           {currentItem.image2 && (
-            <p>
-              <a href={currentItem.link2}>
-                <img
-                  src={`/images/${currentItem.image2}`}
-                  alt={`Second picture of ${currentItem.name}`}
-                  style={{ maxWidth: "300px" }}
-                />
-              </a>
-            </p>
+            <a href={currentItem.link2}>
+              <img
+                className="illustration"
+                src={`/images/${currentItem.image2}`}
+                alt={`Second picture of ${currentItem.name}`}
+              />
+            </a>
           )}
-          <button onClick={handleNextItem}>Next Item</button>
         </div>
       )}
     </div>

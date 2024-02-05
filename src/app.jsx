@@ -1,11 +1,13 @@
 import React from "react";
 import { Router, Link } from "wouter";
+import { HelmetProvider } from 'react-helmet-async';
 
 /**
 * This code defines the react app
 *
+* Imports Helmet provider for the page head
 * Imports the router functionality to provide page navigation
-* Defines the Home function outlining the content on each page
+* Defines the App Home function outlining the content on each page
 * Content specific to each page (Home and About) is defined in their components in /pages
 * Each page content is presented inside the overall structure defined here
 * The router attaches the page components to their paths
@@ -20,21 +22,21 @@ import PageRouter from "./components/router.jsx";
 // The component that adds our Meta tags to the page
 import Seo from './components/seo.jsx';
 
-// Home function that is reflected across the site
-export default function Home() {
+export default function App() {
   return (
-    <Router>
-      <Seo />
-      <main role="main" className="wrapper">
-        <div className="content">
-          {/* Router specifies which component to insert here as the main content */}
-          <PageRouter />
+    <HelmetProvider>
+      <Router>
+        <Seo />
+        <main role="main" className="wrapper">
+          <div className="content">
+            {/* Router specifies which component to insert here as the main content */}
+            <PageRouter />
+          </div>
+        </main>
+        <div className="footer">
+          <a href="https://github.com/aripollak/tomato-or-cannabis">App source</a>
         </div>
-      </main>
-      {/*
-      <footer className="footer">
-      </footer>
-      */}
-    </Router>
+      </Router>
+    </HelmetProvider>
   );
 }
