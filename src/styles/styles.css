@@ -15,6 +15,10 @@ h2 {
   color: #2800FF;
 }
 
+button {
+  margin: 2px;
+}
+
 .wrapper {
   min-height: 86vh;
 }
