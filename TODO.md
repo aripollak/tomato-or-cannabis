@@ -1,4 +1,4 @@
 # TODO 🚧
 
-- split into routable pages (including random seed) or remove router
+- switch to preact
 - script to check images in CSV all exist
