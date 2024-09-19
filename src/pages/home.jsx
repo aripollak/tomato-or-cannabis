@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Papa from "papaparse";
-import Title from "../components/title"
+import Button from "../components/button";
+import Title from "../components/title";
 import itemsCSV from "../items.csv?raw";
 
 const itemsInOriginalOrder = Papa.parse(itemsCSV, {
@@ -33,35 +34,38 @@ export default function Home() {
     <div>
       <Title subtitle={currentItem.name} />
 
-      <div className="interactions">
-        <h2>{currentItem.name}</h2>
+      <div>
+        <h2 className="text-2xl font-bold">{currentItem.name}</h2>
 
         {isCorrect === null && (
           <div>
-            <h3>Is it a Tomato Variety, a Cannabis Strain, or Both?</h3>
-            <div>
-              <button onClick={() => handleGuess("tomato")}>Tomato</button>
-              <button onClick={() => handleGuess("cannabis")}>Cannabis</button>
-              <button onClick={() => handleGuess("both")}>Both</button>
+            <h3 className="text-lg font-semibold">
+              <i>Is it a Tomato Variety, a Cannabis Strain, or Both?</i>
+            </h3>
+            <div className="space-x-4">
+              <Button onClick={() => handleGuess("tomato")}>Tomato</Button>
+              <Button onClick={() => handleGuess("cannabis")}>Cannabis</Button>
+              <Button onClick={() => handleGuess("both")}>Both</Button>
             </div>
           </div>
         )}
         {isCorrect !== null && (
           <div>
-            <h3>
+            <h3 className="text-lg font-semibold">
               {isCorrect ? "Correct!" : "Incorrect!"} It is {currentItem.type}
             </h3>
-            <button onClick={handleNextItem}>Next Item</button>
+            <Button onClick={handleNextItem}>Next Item</Button>
           </div>
         )}
       </div>
 
       {isCorrect !== null && (
-        <div className="illustrations">
+        // add even gap with a visible divider
+        <div className="flex justify-center gap-4 py-4">
           {currentItem.image1 && (
             <a href={currentItem.link1}>
               <img
-                className="illustration"
+                className="w-96 rounded"
                 src={`/images/${currentItem.image1}`}
                 alt={`Picture of ${currentItem.name}`}
               />
@@ -70,7 +74,7 @@ export default function Home() {
           {currentItem.image2 && (
             <a href={currentItem.link2}>
               <img
-                className="illustration"
+                className="w-96 rounded"
                 src={`/images/${currentItem.image2}`}
                 alt={`Second picture of ${currentItem.name}`}
               />
@@ -80,4 +84,4 @@ export default function Home() {
       )}
     </div>
   );
-};
+}
