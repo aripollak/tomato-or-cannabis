@@ -2,18 +2,19 @@
   "name": "Tomato or Cannabis?",
   "version": "0.0.1",
   "description": "A simple single page app, built with Vite and React.",
+  "type": "module",
   "scripts": {
     "start": "vite",
     "build": "vite build",
     "serve": "vite preview"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^4.0.3",
+    "@vitejs/plugin-react": "^4.3.1",
     "papaparse": "^5.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^1.3.0",
-    "vite": "^4.5.5",
+    "vite": "^5.0.0"
   },
   "devDependencies": {
     "prettier": "^3.2.5"
