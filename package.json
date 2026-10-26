@@ -9,6 +9,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
     "@vitejs/plugin-react": "^6.0.2",
     "autoprefixer": "^10.4.20",
     "papaparse": "^5.4.1",
@@ -27,6 +28,6 @@
     "not dead"
   ],
   "engines": {
-    "node": "20.x"
+    "node": "26.x"
   }
 }
